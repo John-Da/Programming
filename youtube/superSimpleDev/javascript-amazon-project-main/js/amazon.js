@@ -48,7 +48,7 @@ products.forEach((product) => {
             Added
           </div>
 
-          <button class="add-to-cart-button button-primary">
+          <button class="add-to-cart-button button-primary data-product-id="${product.id}">
             Add to Cart
           </button>
         </div>
@@ -58,5 +58,26 @@ products.forEach((product) => {
 
 document.querySelector('.products-grid').innerHTML = productsHTML;
 
+document.querySelectorAll('.add-to-cart-button').forEach((button) => {
+    button.addEventListener('click', () => {
+        const productId = button.dataset.productId;
+
+        let matchingItem;
+        cart.forEach((item) => {
+            if(productId === item.productId){
+                matchingItem = item;
+            }
+        });
+        if(matchingItem){
+            matchingItem.quantity += 1;
+        }
+        else{
+            cart.pust({
+                productId:productId,
+                quantity: 1
+            });
+        }
+    });
+});
 
 
