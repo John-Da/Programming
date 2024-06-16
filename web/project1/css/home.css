@@ -39,20 +39,22 @@
     font-size: 66px;
     font-weight: bolder;
     margin-bottom: 15px;
+    color: #000;
 }
 
 .container-right p{
+    color: #000;
     font-size: 14px;
     font-weight: lighter;
     text-align: left;
     line-height: 15px;
     letter-spacing: .6px;
-    margin: 4px 0;
+    margin-bottom: 15px;
     padding-right: 20px;
 }
 
 .talk-btn{
-    margin: 10px 0;
+    margin: 15px 0;
     height: 32px;
     width: 135px;
     background: slateblue;

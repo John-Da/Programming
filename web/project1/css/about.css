@@ -1,0 +1,43 @@
+
+
+.about-section{
+    height: 100vh;
+    width: 100%;
+    background-color: aliceblue;
+}
+
+.about-section .content-title{
+    padding-top: 68px;
+    padding-bottom: 20px;
+}
+
+.about-section .content-title h2{
+    text-align: center;
+    font-size: 34px;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+.skills-content{
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    margin: 10px 20px;
+    height: 80vh;
+    padding: 0 40px;
+    border: 1px solid;
+}
+
+
+.skills-content .left-content{
+    margin: 10px 0;
+    border: 1px solid;
+    width: 58%;
+}
+
+
+.skills-content .right-content{
+    margin: 10px 0;
+    width: 38%;
+    border: 1px solid;
+}
