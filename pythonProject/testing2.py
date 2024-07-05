@@ -17,11 +17,13 @@ gameFont = '../Programming/pythonProject/font/Pixeltype.ttf'
 
 
 score_font = pygame.font.Font(gameFont, 40)
+timer_font = pygame.font.Font(gameFont, 40)
 
 
 sky_surface = pygame.image.load(bgSky)
 ground_surface = pygame.image.load(bgGrd)
-score_surface = score_font.render('Score:', False, 'black')
+score_surface = score_font.render('Score: ', False, 'black')
+timer_surface = timer_font.render('Timer: ', False, 'black')
 
 
 runLoop = True
@@ -34,6 +36,7 @@ while runLoop:
     screen.blit(sky_surface, (0,0))
     screen.blit(ground_surface, (0,300))
     screen.blit(score_surface, (10, 10))
+    screen.blit(timer_surface, (620, 10))
 
     pygame.display.update()
     clock.tick(60)
