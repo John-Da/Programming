@@ -3,12 +3,26 @@ import pygame
 pygame.init()
 
 
-screen = pygame.display.set_mode((1200, 720))
+screen = pygame.display.set_mode((800, 420))
 pygame.display.set_caption("Math Speed Game")
 clock = pygame.time.Clock()
 
-test_surface = pygame.Surface((100, 200))
-test_surface.fill('red')
+
+# test_surface = pygame.Surface((100, 200))
+# test_surface.fill('red')
+
+bgSky = '../Programming/pythonProject/graphics/Sky.png'
+bgGrd = '../Programming/pythonProject/graphics/ground.png'
+gameFont = '../Programming/pythonProject/font/Pixeltype.ttf'
+
+
+score_font = pygame.font.Font(gameFont, 40)
+
+
+sky_surface = pygame.image.load(bgSky)
+ground_surface = pygame.image.load(bgGrd)
+score_surface = score_font.render('Score:', False, 'black')
+
 
 runLoop = True
 while runLoop:
@@ -17,7 +31,9 @@ while runLoop:
             pygame.quit()
             exit()
 
-    screen.blit(test_surface, (200,100))
+    screen.blit(sky_surface, (0,0))
+    screen.blit(ground_surface, (0,300))
+    screen.blit(test_surface, (10, 10))
 
     pygame.display.update()
     clock.tick(60)
