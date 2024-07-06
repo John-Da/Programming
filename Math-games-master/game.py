@@ -13,12 +13,22 @@ WHITE = (255,255,255)
 GREEN = (0,255,0)
 RED = (255,0,0)
 
+gameFont1 = '../Programming/Math-games-master/XpressiveBlack Regular.ttf'
+gameFont2 = '../Programming/Math-games-master/kenvector_future.ttf'
+
+gameSound1 = '../Programming/Math-games-master/item1.ogg'
+gameSound2 = '../Programming/Math-games-master/item2.ogg'
+
+symImage = '../Programming/Math-games-master/symbols.png'
+bgImage = '../Programming/Math-games-master/background.jpg'
+
+
 class Game(object):
     def __init__(self):
         # Create a new font obeject
         self.font = pygame.font.Font(None,65)
         # Create font for the score msg
-        self.score_font = pygame.font.Font("kenvector_future.ttf",20)
+        self.score_font = pygame.font.Font(gameFont2,20)
         # Create a dictionary with keys: num1, num2, result
         # These variables will be used for creating the
         # arithmetic problem
@@ -33,7 +43,7 @@ class Game(object):
         self.reset_problem = False
         # Create menu
         items = ("Addition","Subtraction","Multiplication","Division")
-        self.menu = Menu(items,ttf_font="XpressiveBlack Regular.ttf",font_size=50)
+        self.menu = Menu(items,ttf_font=gameFont1,font_size=50)
         # True: show menu
         self.show_menu = True
         # create the score counter
@@ -41,10 +51,10 @@ class Game(object):
         # Count the number of problems
         self.count = 0
         # load background image
-        self.background_image = pygame.image.load("background.jpg").convert()
+        self.background_image = pygame.image.load(bgImage).convert()
         # load sounds effects
-        self.sound_1 = pygame.mixer.Sound("item1.ogg")
-        self.sound_2 = pygame.mixer.Sound("item2.ogg")
+        self.sound_1 = pygame.mixer.Sound(gameSound1)
+        self.sound_2 = pygame.mixer.Sound(gameSound2)
 
     def get_button_list(self):
         """ Return a list with four buttons """
@@ -100,7 +110,7 @@ class Game(object):
     def get_symbols(self):
         """ Return a dictionary with all the operation symbols """
         symbols = {}
-        sprite_sheet = pygame.image.load("symbols.png").convert()
+        sprite_sheet = pygame.image.load(symImage).convert()
         image = self.get_image(sprite_sheet,0,0,64,64)
         symbols["addition"] = image
         image = self.get_image(sprite_sheet,64,0,64,64)

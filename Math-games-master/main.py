@@ -7,6 +7,7 @@ from game import Game
 SCREEN_WIDTH = 640
 SCREEN_HEIGHT = 480
 
+
 def main():
     # Initialize all imported pygame modules
     pygame.init()

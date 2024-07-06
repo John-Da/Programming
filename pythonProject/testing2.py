@@ -35,7 +35,7 @@ while runLoop:
 
     screen.blit(sky_surface, (0,0))
     screen.blit(ground_surface, (0,300))
-    screen.blit(score_surface, (10, 10))
+    screen.blit(score_surface, (15, 10))
     screen.blit(timer_surface, (620, 10))
 
     pygame.display.update()
