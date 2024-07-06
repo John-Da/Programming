@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Chakra Petch", sans-serif;
+    background-color: black;
+}
+
+.guessGame{
+    padding: 10px;
+    width: 100vh;
+    height: 100vh;
+    margin: auto;
+    background-color: white;
+}
+
+.guessGame h1{
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.3rem;
+}
+
+
+.image {
+    width: 20em;
+    height: 20em;
+    background-image: url("../images/countryShape/c120.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid yellow;
+}
