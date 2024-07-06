@@ -3,30 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country Guess</title>
+    <title>Country Guess Game</title>
 
-    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="css/game.css">
 </head>
 <body>
     <div class="guessGame">
-        <h1>Welcome! This is Country Guess Game</h1>
+        <h1>Welcome! This is <span>Country Guess Game</span>!</h1>
         <div class="gameContent">
+
             <div class="content-left">
-                <div class="image">
-                    <!-- <img src="images/countryShape/c1.png"> -->
-                </div>
-                
+                <div class="image"></div> 
             </div>
+
             <div class="content-right">
-                <h2>What country is this?</h2>
-                <button class="ans_btn" id="ans_1">USA</button>
-                <button class="ans_btn" id="ans_2">USA</button>
-                <button class="ans_btn" id="ans_3">USA</button>
-                <button class="ans_btn" id="ans_4">USA</button>
+                <div class="question">
+                    <h2>What country is this?</h2>
+                </div>
+                <div class="btn">
+                    <button class="ans_btn" id="ans_1">Somalia</button>
+                    <button class="ans_btn" id="ans_2">Myanmar</button>
+                    <button class="ans_btn" id="ans_3">Nigeria</button>
+                    <button class="ans_btn" id="ans_4">South-Korea</button>
+                </div>
             </div>
-            
+        </div>
+
+        <div class="gameResult">
+            <div class="score">
+                <p>Score: </p>
+            </div>
+            <div class="timer">
+                <p>Timer: 00:00</p>
+            </div>
         </div>
     </div>
+
+    <footer><span class="copyright">&#169;</span> | All Preserved | This Is Developed By MeeToo | 6.7.2024</footer>
     
 
 
