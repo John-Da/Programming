@@ -1,11 +1,7 @@
 
-
-
-
-
-
 var a = 60;
 var b = a;
+
 var t = setInterval(() => {
     var s = document.getElementById('timer');
     s.style.strokeDashoffset = -(450 - a) / b;
@@ -19,3 +15,4 @@ var t = setInterval(() => {
         clearInterval(t);
     }
 }, 1000);
+
