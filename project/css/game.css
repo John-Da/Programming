@@ -78,26 +78,28 @@
     height: 5em;
     padding: 10px;
     border: 1px solid red;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
 }
 
 .gameResult .score{
-    width: 20%;
-    height: 100%;
-    align-content: center;
-    padding-left: 10px;
-    border: 1px solid black;
+    padding-left: 40px;
 }
 
 .gameResult .timer{
+    width: 35%;
+    text-align: right;
+    padding-right: 32px;
+}
+
+.score, .timer{
     width: 20%;
     height: 100%;
     align-content: center;
-    text-align: right;
-    padding-right: 10px;
-    border: 1px solid black;
+    font-size: 23px;
+    font-weight: 600;
 }
-
-
 
 
 

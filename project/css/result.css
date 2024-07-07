@@ -1,10 +1,10 @@
 
 
 .score_items{
+    margin: auto;
     margin-top: 4.6rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     width: 40rem;
     height: 26rem;
     border: none;
@@ -13,16 +13,39 @@
     padding: 40px;
 }
 
+.score_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .score_item, .result_item{
     font-size: 22px;
     font-weight: 600;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 10em;
     height: 15em;
 }
 
-.result_item p{
-    text-align: left;
+.score_item .item1,
+.result_item .item2{
+    /* padding-bottom: 50px; */
+    margin-bottom: 54px;
+    border-bottom: 1px solid black;
+}
+
+.result_item .item2 p{
+    text-align: right;
+}
+
+.conclusion{
+    padding-bottom: 8px;
+}
+
+.conclusion p{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 
