@@ -31,11 +31,18 @@
         </div>
 
         <div class="gameResult">
-            <div class="score">
-                <p>Score: </p>
+            
+            <div class="countDown">
+                <div class="timer">
+                    <svg>
+                        <circle id="circle" cy="28px" cx="28px" r="28px"></circle>
+                        <circle id="circle1" cy="28px" cx="28px" r="28px"></circle>
+                    </svg>
+                    <p id="timer">00</p>
+                </div>
             </div>
-            <div class="timer">
-                <p>Timer: 00:00</p>
+            <div class="score">
+                <p>Score: <span id="score">00</span></p>
             </div>
         </div>
     </div>
