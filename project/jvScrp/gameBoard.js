@@ -1,5 +1,5 @@
 import {countries} from './data';
-
+import { get_random_image, get_random_nameBtn } from './randomFunc';
 
 let gameBoard = '';
 
@@ -45,22 +45,4 @@ document.querySelector('.gameContent').innerHTML = gameBoard;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function get_random_image(){
-    
-    // document.getElementById('image').src = `./images/c${selected_img}`;
-// }
 
