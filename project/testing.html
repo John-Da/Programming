@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .correct {
+            background-color: #4CAF50;
+        }
+        .wrong {
+            background-color: #f44336;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Find the Correct Button</h1>
+    <img src="" alt="#">
+    <div class="button-container" id="button-container">
+    </div>
+
+    <!-- <script>
+        function checkAnswer(answer) {
+            if (answer === 'correct') {
+                alert('You clicked the correct button!');
+            } else {
+                alert('Wrong button, try again!');
+            }
+        }
+    </script> -->
+        <!-- <button id="button1" class="wrong" onclick="get_random_image()">Click</button> -->
+    <script src="jvScrp/testing.js"></script>
+</body>
+</html>

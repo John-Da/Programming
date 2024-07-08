@@ -1,21 +1,9 @@
-import {countries} from './data';
-import { get_random_image, get_random_nameBtn } from './randomFunc';
+import {countries} from '../jvScrp';
+
 
 let gameBoard = '';
 
-game.forEach((item) => {
-    random_index = Math.floor(Math.random() * countries.id);
-    selected_img = countries[random_index];
-
-    const itemId = item.id;
-    let matchingImage;
-
-    itemId.forEach((image) => {
-        if (image.id === itemId){
-            matchingImage = image;
-        }
-    });
-
+countries.forEach((country) => {
     gameBoard += 
     `
         <div class="content-left">
@@ -28,21 +16,9 @@ game.forEach((item) => {
             <div class="question">
                 <h2>What country is this?</h2>
             </div>
-            <div class="btn">
+            <div class="btn" id="btn_ans">
                 <button class="ans_btn" id="ans_1" data-image-id="${item.id}">${item.name}</button>
-                <button class="ans_btn" id="ans_2" data-image-id="${item.id}">${item.name}</button>
-                <button class="ans_btn" id="ans_3" data-image-id="${item.id}">${item.name}</button>
-                <button class="ans_btn" id="ans_4" data-image-id="${item.id}">${item.name}</button>
             </div>
         </div>
-
     `
-})
-
-
-document.querySelector('.gameContent').innerHTML = gameBoard;
-
-
-
-
-
+}) 
