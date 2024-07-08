@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #imageContainer {
+            margin-bottom: 20px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        button:active {
+            background-color: #003f7f;
+        }
+        #score {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="imageContainer"></div>
+    <div id="buttonContainer"></div>
+    <div id="score">Score: 0</div>
+
+    <script>
+        // Array of images and corresponding names
+        var images = [
+            {src: 'https://via.placeholder.com/200?text=Image1', name: 'Image 1'},
+            {src: 'https://via.placeholder.com/200?text=Image2', name: 'Image 2'},
+            {src: 'https://via.placeholder.com/200?text=Image3', name: 'Image 3'},
+            {src: 'https://via.placeholder.com/200?text=Image4', name: 'Image 4'}
+        ];
+
+        var score = 0;
+
+        // Function to shuffle an array
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Function to display a new random image and buttons
+        function displayNewImage() {
+            // Select a random image
+            var randomImage = images[Math.floor(Math.random() * images.length)];
+
+            // Display the image
+            var imageContainer = document.getElementById('imageContainer');
+            imageContainer.innerHTML = ''; // Clear previous image
+            var imgElement = document.createElement('img');
+            imgElement.src = randomImage.src;
+            imageContainer.appendChild(imgElement);
+
+            // Shuffle and create buttons
+            var buttonContainer = document.getElementById('buttonContainer');
+            buttonContainer.innerHTML = ''; // Clear previous buttons
+            var buttonNames = images.map(img => img.name);
+            buttonNames = shuffle(buttonNames);
+            for (var i = 0; i < buttonNames.length; i++) {
+                var button = document.createElement('button');
+                button.innerHTML = buttonNames[i];
+                button.addEventListener('click', function() {
+                    if (this.innerHTML === randomImage.name) {
+                        score++;
+                    } else {
+                        score = score;
+                    }
+                    document.getElementById('score').innerText = 'Score: ' + score;
+                    displayNewImage(); // Display a new image and buttons after clicking
+                });
+                buttonContainer.appendChild(button);
+            }
+        }
+
+        // Initial call to display the first image and buttons
+        displayNewImage();
+    </script>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #imageContainer {
+            margin-bottom: 20px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        button:active {
+            background-color: #003f7f;
+        }
+    </style>
+</head>
+<body>
+    <div id="imageContainer"></div>
+    <div id="buttonContainer"></div>
+
+    <script>
+        // Array of images and corresponding names
+        var images = [
+            {src: 'https://via.placeholder.com/200?text=Image1', name: 'Image 1'},
+            {src: 'https://via.placeholder.com/200?text=Image2', name: 'Image 2'},
+            {src: 'https://via.placeholder.com/200?text=Image3', name: 'Image 3'},
+            {src: 'https://via.placeholder.com/200?text=Image4', name: 'Image 4'}
+        ];
+
+        // Function to shuffle an array
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Function to display a new random image and buttons
+        function displayNewImage() {
+            // Select a random image
+            var randomImage = images[Math.floor(Math.random() * images.length)];
+
+            // Display the image
+            var imageContainer = document.getElementById('imageContainer');
+            imageContainer.innerHTML = ''; // Clear previous image
+            var imgElement = document.createElement('img');
+            imgElement.src = randomImage.src;
+            imageContainer.appendChild(imgElement);
+
+            // Shuffle and create buttons
+            var buttonContainer = document.getElementById('buttonContainer');
+            buttonContainer.innerHTML = ''; // Clear previous buttons
+            var buttonNames = images.map(img => img.name);
+            buttonNames = shuffle(buttonNames);
+            for (var i = 0; i < buttonNames.length; i++) {
+                var button = document.createElement('button');
+                button.innerHTML = buttonNames[i];
+                button.addEventListener('click', function() {
+                    if (this.innerHTML === randomImage.name) {
+                        alert('Correct! ' + randomImage.name + ' matches the image.');
+                    } else {
+                        alert('Wrong! The correct answer was ' + randomImage.name + '.');
+                    }
+                    displayNewImage(); // Display a new image and buttons after clicking
+                });
+                buttonContainer.appendChild(button);
+            }
+        }
+
+        // Initial call to display the first image and buttons
+        displayNewImage();
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #imageContainer {
+            margin-bottom: 20px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        button:active {
+            background-color: #003f7f;
+        }
+    </style>
+</head>
+<body>
+    <div id="imageContainer"></div>
+    <div id="buttonContainer"></div>
+
+    <script>
+        // Array of images and corresponding names
+        var images = [
+            {src: 'https://via.placeholder.com/200?text=Image1', name: 'Image 1'},
+            {src: 'https://via.placeholder.com/200?text=Image2', name: 'Image 2'},
+            {src: 'https://via.placeholder.com/200?text=Image3', name: 'Image 3'},
+            {src: 'https://via.placeholder.com/200?text=Image4', name: 'Image 4'}
+        ];
+
+        // Function to shuffle an array
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Select a random image
+        var randomImage = images[Math.floor(Math.random() * images.length)];
+
+        // Display the image
+        var imageContainer = document.getElementById('imageContainer');
+        var imgElement = document.createElement('img');
+        imgElement.src = randomImage.src;
+        imageContainer.appendChild(imgElement);
+
+        // Shuffle and create buttons
+        var buttonContainer = document.getElementById('buttonContainer');
+        var buttonNames = images.map(img => img.name);
+        buttonNames = shuffle(buttonNames);
+        for (var i = 0; i < buttonNames.length; i++) {
+            var button = document.createElement('button');
+            button.innerHTML = buttonNames[i];
+            button.addEventListener('click', function() {
+                if (this.innerHTML === randomImage.name) {
+                    alert('Correct! ' + randomImage.name + ' matches the image.');
+                } else {
+                    alert('Wrong! Try again.');
+                }
+            });
+            buttonContainer.appendChild(button);
+        }
+    </script>
+</body>
+</html> -->

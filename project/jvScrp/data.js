@@ -1,4 +1,4 @@
-export const countries = [
+export var countries = [
     
     {
         name: 'Argentina',

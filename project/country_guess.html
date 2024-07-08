@@ -10,28 +10,18 @@
 </head>
 <body>
     <div class="guessGame">
+<!-- ------------------------------------------ -->
         <h1>
             Welcome! This is <span>Country Guess Game</span>!
         </h1>
 
         <div class="gameContent">
-            <div class="content-left">
-                <div class="image">
-                    <img src="${item.image}" id="image">
-                </div>
+            <h2>What country is this?</h2>
+            <div class="container">
+                <div class="image" id="imageContainer"></div>
+                <div class="btn" id="buttonContainer"></div>
             </div>
-    
-            <div class="content-right">
-                <div class="question">
-                    <h2>What country is this?</h2>
-                </div>
-                <div class="btn">
-                    <button class="ans_btn" id="ans_1" data-image-id="${item.id}">${item.name}</button>
-                    <button class="ans_btn" id="ans_2" data-image-id="${item.id}">${item.name}</button>
-                    <button class="ans_btn" id="ans_3" data-image-id="${item.id}">${item.name}</button>
-                    <button class="ans_btn" id="ans_4" data-image-id="${item.id}">${item.name}</button>
-                </div>
-            </div>
+            <div class="score" id="score"></div>
         </div>
 
         <div class="gameResult">
