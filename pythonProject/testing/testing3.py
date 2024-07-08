@@ -49,15 +49,20 @@ def game():
             print(f'You only have {chances - wrong_ans} chances now!')
             if wrong_ans == chances:
                 print(f'======= Game Over =========\nYour score is {score}')
-                choice = input("Play Again or Quit (P / Q): ")
-                if choice.lower() == 'q':
-                    break
-                elif choice.lower() == 'p':
-                    print('Good luck!')
-                    wrong_ans = 0
-                    game()
-            
-    print('See you again!')
+                while True:
+                    choice = input("Play Again or Quit (P / Q): ").strip().lower()
+                    if choice == 'q':
+                        run = False
+                        print('See you again!')
+                        exit()
+                    elif choice == 'p':
+                        print(f'You now have {chances} chances...\nGood luck!')
+                        wrong_ans = 0
+                        game()
+                    else:
+                        print("Invalid input. Please enter 'p' to play (or) 'q' to quit.")
+   
+    # print('See you again!')
     # print(f'======= Game Over =========\nYour score is {score}')
     # print(f'======= Game Over =========\nYour score is {score}\nCorrect: {correct_ans}\nWrong: {wrong_ans}')
 
