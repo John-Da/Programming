@@ -78,7 +78,7 @@ def choice():
                 if register() == True:
                     login_successful, my_username = login()
                     if login_successful:
-                        menu()
+                        # menu()
                         break
                     else :
                         choice()
@@ -87,7 +87,7 @@ def choice():
             elif choice_try2 == "l":
                 login_successful, my_username = login()
                 if login_successful:
-                    menu()
+                    # menu()
                     break
                 else :
                     choice()
