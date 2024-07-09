@@ -101,4 +101,5 @@ def choice():
             print("\nError")
             break
             
-            
+register()
+login()      
