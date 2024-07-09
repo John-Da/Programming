@@ -1,3 +1,8 @@
+
+# number = [num for num in numbers if num > 0]
+
+
+
 # # main loop
 
 # if __name__ == "__main__":
