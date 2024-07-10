@@ -29,10 +29,6 @@ def ask_question():
     return guess == round(answer, 2)
 
 
-def countDown():
-    pass
-
-
 def game():
     score = 0
     chances = 3
