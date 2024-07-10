@@ -100,6 +100,4 @@ def choice():
         else :
             print("\nError")
             break
-            
-register()
-login()      
+                

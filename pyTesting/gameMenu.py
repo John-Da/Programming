@@ -1,5 +1,10 @@
 #game Choices
-import scoreboard
+import gameScore
+import allOfThem
+import gameAdd as addition
+import gameSubt as subtraction
+import gameMult as multiplication
+import gameDivi as division
 
 
 def menu(): 
@@ -11,7 +16,7 @@ def menu():
     print("6) Score Board")
     choice_games = input("What would you want to play? (1,2,3,4,5,6): ")
     if choice_games == "1" :
-        addition()
+        addition.gameAddition()
     elif choice_games == "2":
         subtraction()
     elif choice_games == "3":
@@ -21,8 +26,8 @@ def menu():
     elif choice_games == "5":
         allOfThem()
     elif choice_games == "6":
-        # scoreboard(point,my_username)
-        scoreboard()
+        # gameScore(point,my_username)
+        gameScore()
     elif choice_games == "6" :
         print("\nSee you")
         exit()

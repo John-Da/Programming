@@ -1,9 +1,10 @@
 import time
 
-
+delayTime = 5
 def countdown(): 
     t = 1
     while t: 
-        time.sleep(1) 
+        time.sleep(delayTime)
         t -= 1
-        
+
+countdown()

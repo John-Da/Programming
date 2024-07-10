@@ -1,6 +1,8 @@
 import random
 import operator
 from termcolor import colored
+import gameMenu as menu
+import countdown as countDown
 
 
 def random_problem():
@@ -50,11 +52,12 @@ def game():
                     choice = input("Play Again or Quit (P / Q): ").strip().lower()
                     if choice == 'q':
                         run = False
-                        print('See you again!')
-                        exit()
+                        countDown()
+                        menu()
                     elif choice == 'p':
                         print(f'You now have {chances} chances...\nGood luck!')
                         wrong_ans = 0
+                        countDown()
                         game()
                     else:
                         print("Invalid input. Please enter 'p' to play (or) 'q' to quit.")
