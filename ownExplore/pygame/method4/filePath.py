@@ -1,6 +1,9 @@
 
 # --------- File Paths -----------------
-bgImg = "/assets/Background.png"
-gameLines = '/Users/yendahwa/Desktop/MyStuff/MyWorks/myGitHub/Programming/ownExplore/pygame/method4/gameDiscription.txt'
+bgImg = "ownExplore/pygame/method4/assets/Background.png"
+
+gameLines = 'ownExplore/pygame/method4/gameDiscription.txt'
+
+userData = "ownExplore/pygame/method4/userData.txt"
 
 

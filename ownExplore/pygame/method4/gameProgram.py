@@ -1,6 +1,6 @@
 import pygame,sys
 import filePath, btnStyle
-
+import countdown
 
 
 pygame.init()
@@ -69,15 +69,21 @@ resumeBtn = btnStyle.Button("Resume", resumeWidth, resumeHeight, (resumePosX, re
 
 
 
-# --------- Game Run -----------------
+# --------- Game Loop -----------------
 menu_state = "main"
+delayTime = 1
 showMenu = False
 run = True
+
+
+def gameLoading():
+    pass
 
 
 def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
     screen.blit(img, (x,y))
+
 
 def toMenu():
     while run:
@@ -105,13 +111,22 @@ def main():
 
         if not showMenu:
             startBtn.draw(screen)
-            if startBtn.pressed is True:
+            if startBtn.pressed:
+                countdown.countdown(delayTime)
                 showMenu = True
             else:
                 showMenu = False
         else:
             # toMenu()
             addBtn.draw(screen)
+            subtBtn.draw(screen)
+            multBtn.draw(screen)
+            diviBtn.draw(screen)
+            quitBtn.draw(screen)
+            if quitBtn.pressed:
+                countdown.countdown(delayTime)
+                pygame.quit()
+
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
