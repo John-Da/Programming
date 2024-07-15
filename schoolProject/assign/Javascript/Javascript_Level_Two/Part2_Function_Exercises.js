@@ -25,8 +25,17 @@
 
 function sleepIn(weekday, vacation) {
     //Code Goes Here
+    if (weekday != true && vacation != true){
+      console.log(true)
+    }
+    else{
+      console.log(false)
+    }
 }
 
+sleepIn(false, false)
+sleepIn(true, true)
+sleepIn(false, true)
 
 //
 // PROBLEM 2: MONKEY TROUBLE
@@ -43,7 +52,21 @@ function sleepIn(weekday, vacation) {
 
 function monkeyTrouble(aSmile, bSmile) {
     //Code Goes Here
+    if (aSmile == true && bSmile == true){
+      console.log(true)
+    } 
+    else if(aSmile == false && bSmile == false){
+      console.log(true)
+    }
+    else{
+      console.log(false)
+    }
 }
+
+monkeyTrouble(true, true)
+monkeyTrouble(false, false)
+monkeyTrouble(true, false)
+
 
 
 //
@@ -60,7 +83,14 @@ function monkeyTrouble(aSmile, bSmile) {
 
 function stringTimes(str, n) {
     //Code Goes Here
+    var text = str.repeat(n)
+    return text
 }
+
+console.log(stringTimes("Hi", 2));
+console.log(stringTimes("Hi", 3));
+console.log(stringTimes("Hi", 1));
+
 
 // PROBLEM 4: LUCKY SUM
 
@@ -79,7 +109,17 @@ function stringTimes(str, n) {
 function luckySum(a, b, c){
 
   //Code Goes Here
+  if (a === 13) return 0;
+  if (b === 13) return a;
+  if (c === 13) return a + b;
+  return a + b + c
+
 }
+
+console.log(luckySum(1, 2, 3));
+console.log(luckySum(1, 2, 13));
+console.log(luckySum(1, 13, 3));
+
 
 // PROBLEM 5:
 //
@@ -97,7 +137,15 @@ function luckySum(a, b, c){
 
 function caught_speeding(speed, is_birthday){
   //Code Goes Here
+  if (speed <= 60 || is_birthday == true) return 0;
+  if ((speed > 61 && speed < 80) || is_birthday == true) return 1;
+  if ((speed > 81) || is_birthday == true) return 2;
 }
+
+console.log(caught_speeding(60, false));
+console.log(caught_speeding(65, false));
+console.log(caught_speeding(65, true));
+
 
 
 // BONUS: MAKE BRICKS
@@ -115,4 +163,10 @@ function caught_speeding(speed, is_birthday){
 
 function makeBricks(small, big, goal){
   //Code Goes Here
+  return goal <= small + big * 5 && goal % 5 <= small;
 }
+
+
+console.log(makeBricks(3, 1, 8))
+console.log(makeBricks(3, 1, 9))
+console.log(makeBricks(3, 2, 10))

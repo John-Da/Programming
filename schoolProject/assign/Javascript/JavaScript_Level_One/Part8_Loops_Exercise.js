@@ -11,12 +11,19 @@
 // Use a For Loop to print (console.log()) out the word "hello" 5 times.
 //
 // Do this with a While Loop and a For Loop
+var word = "hello";
+let count = 0;
+// // While Loop
+while(count < 5){
+    console.log("hello");
+    count+=1;
+}
 
-// While Loop
-
-
-// For Loop
-
+// // For Loop
+var word = "hello";
+for (var i = 0; i < 5; i++){
+    console.log(word)
+}
 
 
 
@@ -29,7 +36,21 @@
 
 // METHOD ONE
 // While Loop
+let j = 0;
+while(j <= 25){
+    if (j % 2){
+        console.log(j);
+    }
+    j++;
+}
+
 
 
 // METHOD TWO
 // For Loop
+
+for (var a = 0; a <= 25; a++){
+    if (a % 2){
+        console.log(a);
+    }
+}
