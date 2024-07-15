@@ -11,7 +11,7 @@ buttonSelect = 4
 
 class Button:
   
-    def __init__(self, text, width, height, pos, gFont, elevation):
+    def __init__(self, text, width, height, pos, gFont, elevation, operator):
         self.pressed = False
         self.elevation = elevation
         self.dynamic_elevation = elevation
@@ -24,6 +24,8 @@ class Button:
 
         self.text_surface = gFont.render(text, True, whiteColor)
         self.text_rect = self.text_surface.get_rect(center=self.top_rect.center)
+
+        self.operator = operator
 
     def draw(self, surface):
 
@@ -41,17 +43,19 @@ class Button:
     def check_click(self):
         mouse_pos = pygame.mouse.get_pos()
         if self.top_rect.collidepoint(mouse_pos):
-            # self.top_color = hoverColor
+            self.top_color = topColor
             if pygame.mouse.get_pressed()[0]:
-                self.dynamic_elevation = 0
-                self.pressed = True
+                if self.pressed == False:
+                    self.dynamic_elevation = 0
+                    self.pressed = True
+                    print(self.operator)
             else:
-                self.dynamic_elevation = self.elevation
-                # if self.pressed == True:
-                self.pressed = False
+                if self.pressed == True:
+                    self.dynamic_elevation = self.elevation
+                    self.pressed = False
         else:
             self.dynamic_elevation = self.elevation
-            # self.top_color = topColor
+            self.top_color = hoverColor
             
         
 
