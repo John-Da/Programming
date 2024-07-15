@@ -33,6 +33,9 @@ discriptionX = 60; discriptionY = 100
 screenFill = '#DCDDD8'
 whiteColor = '#FFFFFF'
 text_col = (255, 255, 255)
+bgColor = "#3d6466"
+darkerCol = "#28393a"
+badeeCol = "#badee2"
 
 titleFontSize = 40
 btnFontSize = 30
@@ -89,7 +92,7 @@ def draw_text(text, font, text_col, x, y):
 
 def toMenu():
     while run:
-        screen.fill(screenFill)
+        screen.fill(bgColor)
         draw_text("Main Menu", titleFont, text_col, introTitleX, introTitleY)
         if addBtn.draw(screen):
             print("Added")
@@ -115,10 +118,9 @@ def toMenu():
 
 def main():
     global showMenu
-    screen.fill('gray')
     while run:
-        screen.fill(screenFill)
-        mouse_pos = pygame.mouse.get_pressed()[0]
+        screen.fill(bgColor)
+        # mouse_pos = pygame.mouse.get_pressed()
 
         if not showMenu:
             draw_text("Welcome to Math Game", titleFont, text_col, introTitleX, introTitleY)
@@ -127,12 +129,12 @@ def main():
                 lines = script.read()
             draw_text(lines, discriptionFont, text_col, discriptionX, discriptionY)
             
-            if startBtn.draw(screen):
-                if mouse_pos == startBtn.pressed:
-                    countdown.countdown(delayTime)
-                    showMenu = True
-                else:
-                    showMenu = False
+            startBtn.draw(screen)
+            if startBtn.pressed:
+                countdown.countdown(delayTime)
+                showMenu = True
+            else:
+                showMenu = False
         else:
             draw_text("Main Menu", titleFont, text_col, introTitleX, introTitleY)
             addBtn.draw(screen)

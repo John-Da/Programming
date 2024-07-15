@@ -48,7 +48,6 @@ class Button:
                 if self.pressed == False:
                     self.dynamic_elevation = 0
                     self.pressed = True
-                    print(self.operator)
             else:
                 if self.pressed == True:
                     self.dynamic_elevation = self.elevation
@@ -57,6 +56,21 @@ class Button:
             self.dynamic_elevation = self.elevation
             self.top_color = hoverColor
             
+    
+    # def inputMessage(self):
+    #     self.check_click()
+    #     if self.operator == 'play':
+    #         print("This is Play")
+    #     if self.operator == 'addition':
+    #         print("This is Addition")
+    #     if self.operator == 'subtraction':
+    #         print("This is Subtraction")
+    #     if self.operator == 'multiplication':
+    #         print("This is Multiplication")
+    #     if self.operator == 'division':
+    #         print("This is Division")
+    #     if self.operator == 'quit':
+    #         print("This is Quit")
         
 
 
