@@ -118,7 +118,7 @@ def main():
     screen.fill('gray')
     while run:
         screen.fill(screenFill)
-        mouse_pos = pygame.mouse.get_pressed()
+        mouse_pos = pygame.mouse.get_pressed()[0]
 
         if not showMenu:
             draw_text("Welcome to Math Game", titleFont, text_col, introTitleX, introTitleY)
@@ -127,24 +127,19 @@ def main():
                 lines = script.read()
             draw_text(lines, discriptionFont, text_col, discriptionX, discriptionY)
             
-            startBtn.draw(screen)
-            if startBtn.pressed:
-                countdown.countdown(delayTime)
-                showMenu = True
-            else:
-                showMenu = False
+            if startBtn.draw(screen):
+                if mouse_pos == startBtn.pressed:
+                    countdown.countdown(delayTime)
+                    showMenu = True
+                else:
+                    showMenu = False
         else:
             draw_text("Main Menu", titleFont, text_col, introTitleX, introTitleY)
-            if addBtn.draw(screen):
-                print("Added")
-            if subtBtn.draw(screen):
-                print("Subtracted")
-            if multBtn.draw(screen):
-                print("Multiply")
-            if diviBtn.draw(screen):
-                print("Divided")
-            if quitBtn.draw(screen):
-                print("Quit")
+            addBtn.draw(screen)
+            subtBtn.draw(screen)
+            multBtn.draw(screen)
+            diviBtn.draw(screen)
+            quitBtn.draw(screen)
 
 
         for event in pygame.event.get():
