@@ -91,27 +91,7 @@ def draw_text(text, font, text_col, x, y):
 
 
 def toMenu():
-    while run:
-        screen.fill(bgColor)
-        draw_text("Main Menu", titleFont, text_col, introTitleX, introTitleY)
-        if addBtn.draw(screen):
-            print("Added")
-        if subtBtn.draw(screen):
-            print("Subtracted")
-        if multBtn.draw(screen):
-            print("Multiply")
-        if diviBtn.draw(screen):
-            print("Divided")
-        if quitBtn.draw(screen):
-            print("Quit")
-
-    for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()    
-
-    pygame.display.update()
-    clock.tick(60)
+    pass
 
     
 

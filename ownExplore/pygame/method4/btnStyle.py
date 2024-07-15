@@ -1,9 +1,9 @@
 import pygame
 
-topColor = '#ADD8E6'
+topColor = '#ec1919'
 whiteColor = '#FFFFFF'
-hoverColor = '#D74B4B'
-bottomColor = '#354B5E'
+hoverColor = '#f26b6b'
+bottomColor = '#340404'
 
 buttonRadius = 4
 buttonSelect = 4
