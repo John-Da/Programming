@@ -1,6 +1,6 @@
-import testing
+import signIn_signUp
 
 
 if __name__ == "__main__":
-    testing.signIn()
-    testing.app.mainloop()
+    signIn_signUp.signIn()
+    signIn_signUp.app.mainloop()
