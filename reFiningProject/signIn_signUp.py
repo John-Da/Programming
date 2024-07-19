@@ -1,4 +1,4 @@
-# from tkinter import *
+from tkinter import *
 import tkinter
 import customtkinter
 from PIL import ImageTk, Image
@@ -9,7 +9,7 @@ import gameDataAsset
 
 
 
-# customtkinter.set_appearance_mode("dark") # light / dark / system
+customtkinter.set_appearance_mode("dark") # light / dark / system
 customtkinter.set_default_color_theme("green") # dark-blue, blue, green
 
 
@@ -48,7 +48,7 @@ l1.pack()
 def signIn():
 # =====----- Sign In Frame -----=====
     signInScreen = customtkinter.CTkFrame(master=l1, width=320, height=380, corner_radius=15)
-    signInScreen.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+    signInScreen.place(relx=0.5, rely=0.5, anchor='center')
 
     l2 = customtkinter.CTkLabel(master=signInScreen, text="Sign In", font=(fFamily, 40, 'bold'), text_color=redColor)
     l2.place(x=104, y=20)
@@ -84,7 +84,7 @@ def signIn():
     userPassword.bind("<FocusIn>", on_enter)
     userPassword.bind("<FocusOut>", on_leave)
     userPassword.insert(0, 'Password')
-    userPassword.place(x=30, y=166)
+    userPassword.place(x=30, y=172)
     
     
 # =====----- Sigin Check -----=====
@@ -99,7 +99,13 @@ def signIn():
 
         if key in readFile.keys() and value == readFile[key]:
             app.destroy()
-            import main
+
+
+            # import main ------------
+
+
+
+            
         else:
             warningLable = customtkinter.CTkLabel(master=signInScreen, text="Username or Password is wrong!", font=(fFamily, 12), text_color=redColor)
             warningLable.place(x=30, y=82)
@@ -171,13 +177,13 @@ def signUp():
     
     def on_leave(uPassword):
         if confirmUserPassword.get()=='':
-            confirmUserPassword.insert(0, 'Password')
+            confirmUserPassword.insert(0, 'Confirm password')
 
 
     confirmUserPassword = customtkinter.CTkEntry(master=signUpScreen, width=260, height=47)
     confirmUserPassword.bind("<FocusIn>", on_enter)
     confirmUserPassword.bind("<FocusOut>", on_leave)
-    confirmUserPassword.insert(0, 'Password')
+    confirmUserPassword.insert(0, 'Confirm password')
     confirmUserPassword.place(x=30, y=224)
 
     # =====----- Sign Up Checker -----======
