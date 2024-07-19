@@ -4,6 +4,8 @@ import customtkinter
 from PIL import ImageTk, Image
 import ast
 
+import gameDataAsset
+
 
 
 
@@ -13,25 +15,23 @@ customtkinter.set_default_color_theme("green") # dark-blue, blue, green
 
 app = customtkinter.CTk()
 app.geometry("800x600")
-app.title("Login")
+app.title("Math Game")
 
 
 
 # =====----- Color / File Path / Font -----=====
 
 
-fFamily = 'Century Gothic'
-redColor = '#ff4f5a'
-bgColor = 'white'
-fgColor = 'black'
+fFamily = gameDataAsset.fFamily
+redColor = gameDataAsset.redColor
+bgColor = gameDataAsset.bgColor
+fgColor = gameDataAsset.fgColor
 
 
-dataSheet = "ownExplore/customTTk/userData.txt"
-
-
-bgImg = "ownExplore/customTTk/assets/pattern.png"
-gogImg = "ownExplore/customTTk/assets/Google__G__Logo.svg.webp"
-fbImg = "ownExplore/customTTk/assets/124010.png"
+dataSheet = gameDataAsset.dataSheet
+bgImg = gameDataAsset.bgImg
+gogImg = gameDataAsset.gogImg
+fbImg = gameDataAsset.fbImg
 
 
 
@@ -165,7 +165,7 @@ def signUp():
 
 
 
-# =====----- Confirm UserPassword -----=====
+# =====----- Confirm UserPassword -----======
     def on_enter(uPassword):
         confirmUserPassword.delete(0, 'end')
     
@@ -180,7 +180,7 @@ def signUp():
     confirmUserPassword.insert(0, 'Password')
     confirmUserPassword.place(x=30, y=224)
 
-    # =====----- Sign Up Checker -----=====
+    # =====----- Sign Up Checker -----======
 
     def signUpCheck():
         key = userName.get()
@@ -215,7 +215,7 @@ def signUp():
     recomLabel = customtkinter.CTkLabel(master=signUpScreen, text="Already have an account?", text_color=bgColor, font=(fFamily, 12))
     recomLabel.place(x=30, y=292+30)
 
-    signUpBtn = customtkinter.CTkButton(master=signUpScreen, text="Sign Up", text_color=redColor, font=(fFamily, 12), fg_color="transparent", hover=False, command=signIn)
+    signUpBtn = customtkinter.CTkButton(master=signUpScreen, text="Sign In", text_color=redColor, font=(fFamily, 12), fg_color="transparent", hover=False, command=signIn)
     signUpBtn.place(x=194, y=292+30)
 
 
