@@ -51,11 +51,18 @@ def gameStart():
     with open(discription, 'r') as script:
         readFile = script.read()
 
-    scriptLabel = customtkinter.CTkLabel(master=startScreen, text=readFile, font=(fFamily, 12, 'bold'), text_color=redColor, bg_color=fgColor)
-    scriptLabel.place(relx=0.5, rely=0.28, anchor=tkinter.CENTER)
+    scriptLabel = customtkinter.CTkLabel(master=startScreen, text=readFile, wraplength=580, font=(fFamily, 12), text_color=redColor, bg_color=fgColor)
+    scriptLabel.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
 # n, ne, e, se, s, sw, w, nw, or center
 
-    startBtn = customtkinter.CTkButton(master=startScreen, text="Start", text_color=bgColor, font=(fFamily, 18, 'bold'), fg_color=blueGreen, hover_color=turquoise, width=110, height=40)
+    def startGame():
+        try:
+            pass
+        except Exception as e:
+            print(f'Error: {e}')
+        pass
+
+    startBtn = customtkinter.CTkButton(master=startScreen, text="Start", text_color=bgColor, font=(fFamily, 18, 'bold'), fg_color=blueGreen, hover_color=turquoise, width=110, height=40, command=startGame)
     startBtn.place(x=310, y=380)
 
 
