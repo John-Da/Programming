@@ -105,7 +105,7 @@ def signIn():
 
 
 
-            
+
         else:
             warningLable = customtkinter.CTkLabel(master=signInScreen, text="Username or Password is wrong!", font=(fFamily, 12), text_color=redColor)
             warningLable.place(x=30, y=82)
@@ -197,16 +197,13 @@ def signUp():
             file = open(dataSheet, 'r+')
             data = file.read()
             readFile = ast.literal_eval(data)
-            print(readFile)
 
             dict2 = {key:value}
             print(dict2)
             readFile.update(dict2)
-            print(readFile)
+
             file.truncate(0)
             file.close()
-
-            print(readFile)
 
             file = open(dataSheet, 'w')
             w = file.write(str(readFile))
