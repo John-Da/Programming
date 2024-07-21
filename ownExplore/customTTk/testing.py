@@ -224,5 +224,5 @@ def signUp():
 
 
 
-# signIn()
-# app.mainloop()
+signIn()
+app.mainloop()

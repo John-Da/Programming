@@ -3,6 +3,7 @@ import tkinter
 import customtkinter
 from PIL import ImageTk, Image
 import gameDataAsset
+# import gameMenu
 
 
 
@@ -22,6 +23,7 @@ discription = gameDataAsset.gameScript
 bgImg = gameDataAsset.bgImg
 gogImg = gameDataAsset.gogImg
 fbImg = gameDataAsset.fbImg
+playImg = gameDataAsset.playImg
 
 
 customtkinter.set_appearance_mode("dark")
@@ -57,12 +59,16 @@ def gameStart():
 
     def startGame():
         try:
-            pass
+            app.destroy()
+            import gameMenu
+            gameMenu.gameMenu()
         except Exception as e:
             print(f'Error: {e}')
         pass
+    
 
-    startBtn = customtkinter.CTkButton(master=startScreen, text="Start", text_color=bgColor, font=(fFamily, 18, 'bold'), fg_color=blueGreen, hover_color=turquoise, width=110, height=40, command=startGame)
+    playBtnImg = ImageTk.PhotoImage(Image.open(playImg).resize((20, 20), Image.AFFINE))
+    startBtn = customtkinter.CTkButton(master=startScreen, image=playBtnImg, text="Start", text_color=bgColor, font=(fFamily, 18, 'bold'), fg_color=blueGreen, hover_color=turquoise, width=110, height=40, compound='left', command=startGame)
     startBtn.place(x=310, y=380)
 
 

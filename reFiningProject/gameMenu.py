@@ -5,9 +5,6 @@ from PIL import ImageTk, Image
 import gameDataAsset
 
 
-
-
-
 fFamily = gameDataAsset.fFamily
 redColor = gameDataAsset.redColor
 bgColor = gameDataAsset.bgColor
