@@ -93,11 +93,11 @@ redColor = "#ff0000"
 resumeImg = gameDataAsset.resumeImg
 
 root = tkinter.Tk()
-bgImg = gameDataAsset.bgImg
-bkImg = ImageTk.PhotoImage(Image.open(bgImg))
-l1 = customtkinter.CTkLabel(master=root, image=bkImg)
-l1.pack()
-Buttons(l1, bgColor, fFamily, redColor, resumeImg)
+# bgImg = gameDataAsset.bgImg
+# bkImg = ImageTk.PhotoImage(Image.open(bgImg))
+# l1 = customtkinter.CTkLabel(master=root, image=bkImg)
+# l1.pack()
+Buttons(root, bgColor, fFamily, redColor, resumeImg)
 root.mainloop()
 
 
