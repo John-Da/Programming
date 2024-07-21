@@ -17,6 +17,9 @@ app = customtkinter.CTk()
 app.geometry("800x600")
 app.title("Math Game")
 
+icon = ImageTk.PhotoImage(Image.open(gameDataAsset.gogImg))
+app.iconphoto(True, icon)
+
 
 
 # =====----- Color / File Path / Font -----=====
@@ -107,7 +110,7 @@ def signIn():
 
 
         else:
-            warningLable = customtkinter.CTkLabel(master=signInScreen, text="Username or Password is wrong!", font=(fFamily, 12), text_color=redColor)
+            warningLable = customtkinter.CTkLabel(master=signInScreen, text="Username or Password is wrong!", font=(fFamily, 14, 'bold'), text_color=redColor)
             warningLable.place(x=30, y=82)
 
         
@@ -209,7 +212,7 @@ def signUp():
             w = file.write(str(readFile))
 
         else:
-            warningLable = customtkinter.CTkLabel(master=signUpScreen, text="Username or Password is wrong!", font=(fFamily, 20, 'bold'), text_color=redColor)
+            warningLable = customtkinter.CTkLabel(master=signUpScreen, text="Username or Password is wrong!", font=(fFamily, 14, 'bold'), text_color=redColor)
             warningLable.place(x=30, y=82)
 
     signinBtn = customtkinter.CTkButton(master=signUpScreen, width=260, height=40, text="Sing In", font=(fFamily, 20, "bold"), corner_radius=8, command=signUpCheck)
