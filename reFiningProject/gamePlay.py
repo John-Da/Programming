@@ -35,7 +35,7 @@ l1.pack()
 
 
 class Buttons:
-    def __init__(self, master):
+    def __init__(self, master, bgColor, fFamily, redColor, resumeImg):
         pass
     pass
 
