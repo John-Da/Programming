@@ -15,3 +15,4 @@ gogImg = "ownExplore/customTTk/assets/Google__G__Logo.svg.webp"
 fbImg = "ownExplore/customTTk/assets/124010.png"
 playImg = 'reFiningProject/assets/play-button-arrowhead.png'
 pauseImg = 'reFiningProject/assets/pause.png'
+resumeImg = 'reFiningProject/assets/pause-play.png'
