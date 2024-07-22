@@ -24,10 +24,10 @@ def main():
     btnFrm = Frame(window, bg='white')
     btnFrm.place(relx=0.5, rely=0.5, anchor='center')
 
-    Button(btnFrm, text='Btn 1').pack(side='top')
-    Button(btnFrm, text='Btn 2').pack(side='left')
-    Button(btnFrm, text='Btn 3').pack(side='bottom')
-    Button(btnFrm, text='Btn 4').pack(side='bottom-left')
+    Button(btnFrm, text='Btn 1', width=10, height=5).grid(row=0, column=0, padx=10, pady=10)
+    Button(btnFrm, text='Btn 2', width=10, height=5).grid(row=1, column=0, padx=10, pady=10)
+    Button(btnFrm, text='Btn 3', width=10, height=5).grid(row=0, column=1, padx=10, pady=10)
+    Button(btnFrm, text='Btn 4', width=10, height=5).grid(row=1, column=1, padx=10, pady=10)
 
 
 
