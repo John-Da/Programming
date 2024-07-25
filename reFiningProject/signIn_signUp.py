@@ -3,9 +3,9 @@ import tkinter
 import customtkinter
 from PIL import ImageTk, Image
 import ast
+# from numba import njit
 
 import gameDataAsset
-
 
 
 
@@ -44,8 +44,6 @@ fbImg = gameDataAsset.fbImg
 bkImg = ImageTk.PhotoImage(Image.open(bgImg))
 l1 = customtkinter.CTkLabel(master=app, image=bkImg)
 l1.pack()
-
-
 
 
 def signIn():
