@@ -25,6 +25,20 @@ def main(page: Page):
         mainScreen.controls[0].scale = transform.Scale(
             0.8, alignment=alignment.center_right
         )
+        mainScreen.controls[0].border_radius=border_radius.only(
+            top_left=35,
+            top_right=0,
+            bottom_left=35,
+            bottom_right=0
+        )
+        mainScreen.update()
+
+    def restore(e):
+        mainScreen.controls[0].width = 400
+        mainScreen.controls[0].scale = transform.Scale(
+            1, alignment=alignment.center_right
+        )
+        
         mainScreen.update()
 
 
@@ -127,8 +141,24 @@ def main(page: Page):
     )
 
 
-    profile = Container()
-    mainScreen = Row(
+    profile = Container(
+        width=SCREENWIDTH,
+        height=SCREENHEIGHT,
+        bgcolor=BG,
+        padding=padding.only(left=50, top=60, right=200),
+        border_radius=35,
+        content=Column(
+            controls=[
+                Container(on_click=lambda e: restore(e),
+                    content=Text('<'),
+                    height=30, width=30, border=border.all(color='white', width=1),
+                    border_radius=25, padding=padding.only(left=9, top=3)
+                )
+            ]
+        )
+    )
+
+    mainScreen = Row(alignment='end',
         controls=[
             Container(
                 width=SCREENWIDTH,
