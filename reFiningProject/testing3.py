@@ -94,5 +94,6 @@ resumeImg = gameDataAsset.resumeImg
 bgImage = gameDataAsset.bgImg
 
 root = tkinter.Tk()
+root.geometry(("700x500"))
 Buttons(root, bgColor, fFamily, redColor, resumeImg, bgImage)
 root.mainloop()
