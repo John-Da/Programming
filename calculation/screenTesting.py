@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+# from abc import ABC, abstractmethod
 from tkinter import *
 import tkinter as tk
 import tkinter.font as tkFont
@@ -22,7 +22,7 @@ LIGHT_GREEN = '#00FD84'
 DARK_RED = '#A24B4B'
 
 # newFont = 'calculation/assets/font/font.ttf'
-pixFont = 'calculation/assets/font/newfont.ttf'
+gFont = 'Modern'
 welFont = 115
 
 
@@ -36,7 +36,7 @@ class Screen:
         self.master.geometry('860x600')
         self.master.title('Basic Math')
         # self.master.configure(bg=BLACK)
-        self.customFont = tkFont.Font(family=pixFont, size=welFont, weight='bold')
+        self.customFont = tkFont.Font(family=gFont, size=welFont, weight='bold')
 
         self.bg_img = Image.open(bgImg)
         self.bg_photo = ImageTk.PhotoImage(self.bg_img)
@@ -54,9 +54,9 @@ class WelcomePage(Screen):
         self.label.place(relx=0.5, rely=0.2, anchor='center')
     
 
-class MenuPage(Screen):
-    def __init__(self, master):
-        super().__init__(master)
+class MenuPage(Screen):...
+    # def __init__(self, master):
+    #     super().__init__(master)
 
 
 class Buttons:...
