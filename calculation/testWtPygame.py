@@ -56,7 +56,7 @@ clock = pygame.time.Clock()
 
 # //////////--------- Game Function ------------////////////
 
-# |||||||||||| Buttons ||||||||||||||
+# |||||||||||| Draw Buttons ||||||||||||||
 class Buttons:
     def __init__(self):
         ...
