@@ -28,6 +28,10 @@ REDHOVER = '#FF7D33'
 pixFont = "Helvetica"
 welFont = 115
 strtFont = 58
+menuFont = 74
+optionFont = 40
+
+CURSOR = 'hand2'
 
 
 
@@ -37,7 +41,7 @@ strtFont = 58
 class Screen:
     def __init__(self, master):
         self.master = master
-        self.master.geometry('860x600')
+        self.master.geometry('1980x960')
         self.master.title('Basic Math')
         # self.master.configure(bg=BLACK)
 
@@ -46,26 +50,48 @@ class Screen:
 
         self.bg_label = Label(self.master, image=self.bg_photo)
         self.bg_label.place(relwidth=1, relheight=1)
-        self.mainScreenLabel()
-        self.start_btn()
+        
 
-    
-    def mainScreenLabel(self):
+class WelcomePage(Screen):
+    def __init__(self, master):
+        super().__init__(master)
+        self.mainScreenFrame()
+
+    def mainScreenFrame(self):
         self.welTitle = ctk.CTkFont(family=pixFont, size=welFont, weight='bold')
-        self.welcome = Label(self.bg_label, text='Welcome to Basic Math', font=self.welTitle, bg=BLACK)
+        self.welcome = Label(self.master, text='Welcome to Basic Math', font=self.welTitle, bg=BLACK)
         self.welcome.place(relx=0.5, rely=0.2, anchor='center')
 
-    def start_btn(self):
         self.startTxt = ctk.CTkFont(family=pixFont, size=strtFont, weight='bold')
-        self.startBtn = ctk.CTkButton(self.bg_label, text="START", fg_color=ORANGE, bg_color=BLACK, font=self.startTxt, width=250, height=105, corner_radius=15, hover_color=REDHOVER)
+        self.startBtn = ctk.CTkButton(self.master, text="START", fg_color=ORANGE, bg_color=BLACK, font=self.startTxt, width=250, height=105, corner_radius=15, hover_color=REDHOVER, cursor=CURSOR, command=self.showMenu)
         self.startBtn.place(relx=0.5, rely=0.6, anchor='center')
         
-        
-    
 
-class MenuPage(Screen):...
-    # def __init__(self, master):
-    #     super().__init__(master)
+    def showMenu(self):
+        self.welcome.destroy()
+        self.startBtn.destroy()
+        MenuPage(self.master)
+
+
+class UserName(Screen):
+    def __init__(self, master):
+        super().__init__(master)
+        self.getUserName()
+    
+    def getUserName(self):
+        ...
+        
+
+class MenuPage(Screen):
+    def __init__(self, master):
+        super().__init__(master)
+        self.menuLabel()
+
+    def menuLabel(self):
+        self.menuTitle = ctk.CTkFont(family=pixFont, size=menuFont, weight='bold')
+        self.menu_label = ctk.CTkLabel(self.master, text='What do you like to play?', font=self.menuTitle, fg_color=WHITE)
+        self.menu_label.place(relx=0.5, rely=0.2, anchor='center')
+
 
 
 class Buttons:...
@@ -76,7 +102,7 @@ class Buttons:...
 
 def main():
     root = tk.Tk()
-    app = Screen(root)
+    app = WelcomePage(root)
     root.mainloop()
 
 
