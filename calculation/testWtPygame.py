@@ -6,7 +6,7 @@ import pygame
 
 # //////////--------- ASSETS ------------////////////
 bgImg = 'calculation/assets/img/bgg.png'
-gameIcon = 'calculation/assets/img/bgg.png'
+gameIcon = 'calculation/assets/img/bmlogo.png'
 
 BLACK = '#000000'
 RED = '#D10000'
