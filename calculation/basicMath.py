@@ -114,10 +114,11 @@ class UserName(Screen):
 
 
         self.userNameFont = ctk.CTkFont(family=pixFont, size=welFont, weight='bold')
-        self.userName_label = Label(self.userName_Frame, text='Math Game', font=self.userNameFont, text_color=BLACK)
+        self.userName_label = Label(self.userName_Frame, text='Math Game', font=self.userNameFont, bg=GRAY, fg=BLACK)
         self.userName_label.place(relx=0.5, rely=0.2, anchor='center')
 
-        self.underLine = Label(self.userName_Frame)
+        self.underLine = ctk.CTkLabel(self.userName_Frame, text='', width=780, height=1, fg_color=BLACK, corner_radius=20)
+        self.underLine.place(relx=0.5, rely=0.3, anchor='center')
 
 
     def getUserName(self):
