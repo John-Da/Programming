@@ -30,6 +30,7 @@ pixFont = "Helvetica"
 welFont = 115
 strtFont = 58
 menuFont = 88
+userNameFont = 20
 optionFont = 40
 extFont = 18
 CURSOR = 'hand2'
@@ -39,6 +40,7 @@ ACTION_BTN_RADIUS = 15
 # ACTION_BTN_RADIUS = ACTION_BTN_SIZE // 2
 
 
+USERINFO = 'calculation/assets/data/userInfo.txt'
 
 
 
@@ -61,11 +63,8 @@ class Screen:
         except Exception as e:
             print(f"Error loading background image: {e}")
 
-    def showMenu(self):
-        self.welcome.destroy()
-        self.startBtn.destroy()
-        self.extBtn.destroy()
-        MenuPage(self.master)
+    def getUserName(self):
+        UserName(self.master)
         
         
 
@@ -83,12 +82,12 @@ class WelcomePage(Screen):
         self.welcome = Label(self.master, text='Welcome to Basic Math', font=self.welTitle, bg=BLACK)
         self.welcome.place(relx=0.5, rely=0.2, anchor='center')
 
-        self.startTxt = ctk.CTkFont(family=pixFont, size=strtFont, weight='bold')
-        self.startBtn = ctk.CTkButton(self.master, text="START", fg_color=ORANGE, bg_color=BLACK, font=self.startTxt, width=250, height=105, corner_radius=15, hover_color=REDHOVER, cursor=CURSOR, command=self.showMenu)
+        self.startFont = ctk.CTkFont(family=pixFont, size=strtFont, weight='bold')
+        self.startBtn = ctk.CTkButton(self.master, text="START", fg_color=ORANGE, bg_color=BLACK, font=self.startFont, width=250, height=105, corner_radius=15, hover_color=REDHOVER, cursor=CURSOR, command=self.getUserName)
         self.startBtn.place(relx=0.5, rely=0.6, anchor='center')
 
-        self.extTxt = ctk.CTkFont(family=pixFont, size=extFont, weight='bold')
-        self.extBtn = ctk.CTkButton(self.master, text="Q", fg_color=GRAY, bg_color=BLACK, font=self.extTxt, width=ACTION_BTN_SIZE, height=ACTION_BTN_SIZE, corner_radius=ACTION_BTN_RADIUS, hover_color=GRAYHOVER, cursor=CURSOR, command=quit, text_color=BLACK)
+        self.exitFont = ctk.CTkFont(family=pixFont, size=extFont, weight='bold')
+        self.extBtn = ctk.CTkButton(self.master, text="Q", fg_color=GRAY, bg_color=BLACK, font=self.exitFont, width=ACTION_BTN_SIZE, height=ACTION_BTN_SIZE, corner_radius=ACTION_BTN_RADIUS, hover_color=GRAYHOVER, cursor=CURSOR, command=quit, text_color=BLACK)
         self.extBtn.place(relx=0.85, rely=0.9, anchor='sw')
 
         self.stgTxt = ctk.CTkFont(family=pixFont, size=extFont, weight='bold')
@@ -101,13 +100,28 @@ class WelcomePage(Screen):
 
 # //////////--------- Get User Name ------------////////////
 
-# class UserName(Screen):
-#     def __init__(self, master):
-#         super().__init__(master)
-#         self.getUserName()
+class UserName(Screen):
+    def __init__(self, master):
+        super().__init__(master)
+        self.backGround()
+        self.userNameFrm()
     
-#     def getUserName(self):
-#         ...
+
+    def userNameFrm(self):
+
+        self.userName_Frame = ctk.CTkFrame(self.master,bg_color=BLACK, fg_color=GRAY, width=1105, height=625, corner_radius=15)
+        self.userName_Frame.place(relx=0.5, rely=0.5, anchor='center')
+
+
+        self.userNameFont = ctk.CTkFont(family=pixFont, size=welFont, weight='bold')
+        self.userName_label = Label(self.userName_Frame, text='Math Game', font=self.userNameFont, text_color=BLACK)
+        self.userName_label.place(relx=0.5, rely=0.2, anchor='center')
+
+        self.underLine = Label(self.userName_Frame)
+
+
+    def getUserName(self):
+        ...
         
 
 
@@ -122,8 +136,8 @@ class MenuPage(Screen):
         self.menuLabel()
 
     def menuLabel(self):
-        self.menuTitle = ctk.CTkFont(family=pixFont, size=menuFont, weight='bold')
-        self.menu_label = ctk.CTkLabel(self.master, text='Which one do you like to play?', font=self.menuTitle, bg_color=BLACK)
+        self.menuFont = ctk.CTkFont(family=pixFont, size=menuFont, weight='bold')
+        self.menu_label = ctk.CTkLabel(self.master, text='Which one do you like to play?', font=self.menuFont, bg_color=BLACK)
         self.menu_label.place(relx=0.5, rely=0.2, anchor='center')
 
 
