@@ -8,6 +8,7 @@ import customtkinter as ctk
 
 # //////////--------- ASSETS ------------////////////
 bgImg = 'calculation/assets/img/bgg.png'
+logoImg = 'calculation/assets/img/bmlogo.png'
 
 BLACK = '#000000'
 RED = '#D10000'
@@ -50,6 +51,7 @@ class Screen:
         self.master = master
         self.master.geometry('1980x960')
         self.master.title('Basic Math')
+        
         # self.master.configure(bg=BLACK)
         self.backGround()
 
