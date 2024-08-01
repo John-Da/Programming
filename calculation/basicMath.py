@@ -51,6 +51,10 @@ class Screen:
         self.master = master
         self.master.geometry('1980x960')
         self.master.title('Basic Math')
+
+        # self.iconImg = Image.open(logoImg)
+        # self.logo = ImageTk.PhotoImage(self.iconImg)
+        # self.master.iconphoto(False, self.logo)
         
         # self.master.configure(bg=BLACK)
         self.backGround()
@@ -65,8 +69,7 @@ class Screen:
         except Exception as e:
             print(f"Error loading background image: {e}")
 
-    def getUserName(self):
-        UserName(self.master)
+    
         
         
 
@@ -78,6 +81,9 @@ class WelcomePage(Screen):
         super().__init__(master)
         self.backGround()
         self.mainScreenFrame()
+
+    def getUserName(self):
+        UserName(self.master)
 
     def mainScreenFrame(self):
         self.welTitle = ctk.CTkFont(family=pixFont, size=welFont, weight='bold')
@@ -156,6 +162,11 @@ class Buttons:...
 
 def main():
     root = tk.Tk()
+
+    appIcon = Image.open(logoImg)
+    appLogo = ImageTk.PhotoImage(appIcon)
+    root.iconphoto(False, appLogo)
+
     app = WelcomePage(root)
     root.mainloop()
 
