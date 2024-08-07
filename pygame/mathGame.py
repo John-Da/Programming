@@ -2,14 +2,13 @@ import sys
 import pygame
 
 
-
-from utils.buttons import PlayBtn
+from utils.buttons import Button
+from utils.map import btnFunction
 from utils.filePath import load_img
 
 
-
 class Game:
-    def __init__(self):
+    def __init__(self, btnFunction=None):
         pygame.init()
 
         pygame.display.set_caption("Basic Math")
@@ -19,33 +18,28 @@ class Game:
         self.screenWidth = self.screen.get_width()
         self.screenHeight = self.screen.get_height()
 
+        self.btnFunction = btnFunction
 
 
     def run(self):
         while True:
             self.screen.fill((14, 219, 248))
-
-            mouse = pygame.mouse.get_pos()
+            button = Button(self.screen, "Click", 140, 40, 350, 200, self.btnFunction)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+
                 
-                if event.type== pygame.MOUSEBUTTONDOWN:
-                    if self.screenWidth/2 <= mouse[0] <= self.screenWidth/2+140 and self.screenHeight/2 <= mouse[1] <= self.screenHeight/2+40:
-                        print("Clicked")
-
-            PlayBtn(self.screen).drawBtn()
-
-
-
-
-
+            
+            button.drawBtn()
 
             pygame.display.update()
             self.clock.tick(60)
 
 
 
-Game().run()
+if __name__ == "__main__":
+    app = Game(btnFunction)
+    app.run()
