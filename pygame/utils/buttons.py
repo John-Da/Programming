@@ -45,7 +45,7 @@ class Button:
 
 
 
-    def drawBtn(self):
+    def drawBtn(self, event):
         self.mouse = pygame.mouse.get_pos()
 
         self.btnSurface.fill(self.fillColors['white'])
@@ -53,20 +53,40 @@ class Button:
         if self.btnRect.collidepoint(self.mouse):
             self.btnSurface.fill(self.fillColors['hover'])
             self.text = self.font.render(self.name, True, self.fillColors['white'])
-            if pygame.mouse.get_pressed()[0]:
-                self.btnSurface.fill(self.fillColors['pressed'])
-                if self.onePress:
-                    self.btnClick(True)
-                if not self.alreadyPressed:
-                    self.btnClick(True)
-                    self.alreadyPressed = True
-            else:
-                self.btnClick(False)
-                self.alreadyPressed = False
+            self.is_clicked(event)
+            
 
 
         self.btnSurface.blit(self.text, self.textSurface)
         self.screen.blit(self.btnSurface, self.btnRect.topleft)
+
+
+    def is_clicked(self, event):
+        # if event.type == pygame.MOUSEBUTTONDOWN:
+        #     if self.btnRect.collidepoint(event.pos):
+        #         self.btnClick(True)
+        #         self.onePress = False
+
+        # elif event.type == pygame.MOUSEBUTTONUP and self.onePress:
+        #     if self.btnRect.collidepoint(event.pos):
+        #         self.btnClick(True)
+        #         self.onePress = False
+        #     self.onePress = False
+
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1 and self.btnRect.collidepoint(self.mouse):
+                self.btnClick(True)
+
+        # if pygame.mouse.get_pressed()[0]:
+        #     self.btnSurface.fill(self.fillColors['pressed'])
+        #     if self.onePress:
+        #         self.btnClick(True)
+        #     if not self.alreadyPressed:
+        #         self.btnClick(True)
+        #         self.alreadyPressed = True
+        # else:
+        #     self.btnClick(False)
+        #     self.alreadyPressed = False
 
     
             

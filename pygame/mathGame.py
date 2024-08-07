@@ -33,7 +33,7 @@ class Game:
 
                 
             
-            button.drawBtn()
+            button.drawBtn(event)
 
             pygame.display.update()
             self.clock.tick(60)
