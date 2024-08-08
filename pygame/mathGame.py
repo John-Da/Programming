@@ -3,8 +3,8 @@ import pygame
 
 
 from utils.buttons import Button
-from utils.map import btnFunction
-from utils.filePath import load_img
+# from utils.map import btnFunction
+# from utils.filePath import load_img
 
 
 class Game:
@@ -23,7 +23,11 @@ class Game:
     def run(self):
         while True:
             self.screen.fill((14, 219, 248))
-            button = Button(self.screen, "Click", 140, 40, 350, 200, self.btnFunction)
+
+            button1 = Button(self.screen, "Click", 140, 40, 350, 180)
+            button2 = Button(self.screen, "Button", 140, 40, 350, 380)
+
+            buttons = [button1, button2]
 
             mousepress = pygame.mouse.get_pressed()
 
@@ -33,14 +37,16 @@ class Game:
                     sys.exit()
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    button.is_clicked(event.pos, mousepress)
-
-            button.drawBtn()
+                    for button in buttons:
+                        button.is_clicked(event.pos, mousepress)
+            
+            for button in buttons:
+                button.drawBtn()
 
             pygame.display.update()
             self.clock.tick(60)
 
 
 if __name__ == "__main__":
-    app = Game(btnFunction)
+    app = Game()
     app.run()
