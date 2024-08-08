@@ -1,14 +1,6 @@
 import pygame
 
 
-# white color
-# color = (255,255,255)
-# light shade of the button
-# color_light = (170,170,170)
-# dark shade of the button
-# color_dark = (100,100,100)
-
-
 class Button:
     def __init__(self, screen, text, width, height, x, y, btnFunction=None):
 
