@@ -76,7 +76,7 @@ class Game:
 
     def run(self):
 
-        question = RandomMath(self.screen, self.screenWidth, 160)
+        question = RandomMath(self.screen, self.screenWidth, 200)
 
         def redraw_screen():
             self.screen.fill((0, 0, 0))
