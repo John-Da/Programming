@@ -1,16 +1,135 @@
+
+import sys
+import pygame
 import random
 
-num1 = random.randint(1, 11)
-num2 = random.randint(1, 11)
-operation = {
-            'add': '+',
-            'subt': '-',
-            'multi': '*',
-            'divide': '/',
+pygame.font.init()
+
+class RandomMath:
+    def __init__(self, screen, x, y):
+        self.screen = screen
+        self.first_num = random.randint(1, 11)
+        self.sec_num = random.randint(1, 11)
+        self.operation = {
+            "add": "+",
+            "subt": "-",
+            "multi": "*",
+            "divide": "/",
         }
 
-if operation['add'] == '+':
-    print(f"{num1} {operation['add']} {num2}: {num1+num2}")
+        self.answer = self.first_num + self.sec_num  # Calculate the answer based on the operation
+        self.posx = x
+        self.posy = y
+        self.main_font = pygame.font.SysFont("comicsans", 46)
+
+        self.answers = self.randomAns()  # Generate answers once during initialization
+
+    def showQuestion(self):
+        question_label = self.main_font.render(
+            f"{self.first_num} {self.operation['add']} {self.sec_num}",
+            1,
+            ((255, 255, 255)),
+        )
+        self.screen.blit(question_label, (self.posx // 2 - 40, self.posy))
+
+    def randomAns(self):
+        randomNums = set()
+        while len(randomNums) < 3:  # Ensure we get 3 unique wrong answers
+            num = random.randint(0, 23)
+            if num != self.answer:
+                randomNums.add(num)
+        randomNums.add(self.answer)  # Add the correct answer
+        return list(randomNums)  # Convert to list for easy access
+
+    def showAnswers(self):
+        setSide = 0
+        for ans in self.answers:  # Use the pre-generated answers
+            ans_label = self.main_font.render(f"{ans}", 1, ((255, 255, 255)))
+            self.screen.blit(ans_label, (120 + setSide, 400))
+            setSide += 80  # Increment position for the next answer
+
+    def check_answer(self): 
+        # Placeholder for checking the answer logic
+        pass
+
+
+class Game:
+    def __init__(self):
+        pygame.init()
+        pygame.display.set_caption("Basic Math")
+        self.screen = pygame.display.set_mode((640, 880))
+        self.clock = pygame.time.Clock()
+        self.screenWidth = self.screen.get_width()
+        self.screenHeight = self.screen.get_height()
+        self.score = 0
+        self.lives = 5
+
+        self.main_font = pygame.font.SysFont("comicsans", 36)
+
+    def run(self):
+        question = RandomMath(self.screen, self.screenWidth, 200)
+
+        def redraw_screen():
+            self.screen.fill((0, 0, 0))
+            lives_label = self.main_font.render(f"Lives: {self.lives}", 1, (255, 255, 255))
+            score_label = self.main_font.render(f"Score: {self.score}", 1, ((255, 255, 255)))
+
+            self.screen.blit(score_label, (50, 30))
+            self.screen.blit(lives_label, (self.screenWidth - lives_label.get_width() - 50, 30))
+
+            question.showQuestion()
+            question.showAnswers()
+
+            pygame.display.update()
+
+        while True:
+            self.clock.tick(60)
+            redraw_screen()
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+
+if __name__ == "__main__":
+    app = Game()
+    app.run()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# import random
+
+# num1 = random.randint(1, 11)
+# num2 = random.randint(1, 11)
+# operation = {
+#             'add': '+',
+#             'subt': '-',
+#             'multi': '*',
+#             'divide': '/',
+#         }
+
+# if operation['add'] == '+':
+#     print(f"{num1} {operation['add']} {num2}: {num1+num2}")
 
 
 

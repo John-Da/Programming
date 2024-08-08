@@ -22,6 +22,7 @@ class RandomMath:
         }
 
         self.answer = self.first_num + self.sec_num
+        self.randomAnswers = self.randomAns()
 
         self.posx = x
         self.posy = y
@@ -37,21 +38,22 @@ class RandomMath:
 
         self.screen.blit(question_label, (self.posx // 2 - 40, self.posy))
 
-    def showAnswers(self):
-
-        ans_label = self.main_font.render(
-            f"{self.first_num + self.sec_num}", 1, ((255, 255, 255))
-        )
-
-        self.screen.blit(ans_label, (self.posx // 2, self.posy // 2 + 300))
-
+    
     def randomAns(self):
         randomNums = set()
         while len(randomNums) < 3:
-            num = random.randint(0, 20)
-            if num != self.realanswer:
+            num = random.randint(0, 23)
+            if num != self.answer:
                 randomNums.add(num)
-        randomNums.add(self.realanswer)
+        randomNums.add(self.answer)
+        return list(randomNums)
+    
+    def showAnswers(self):
+        setSide = 0
+        for ans in self.randomAnswers:  # Use the pre-generated answers
+            ans_label = self.main_font.render(f"{ans}", 1, ((255, 255, 255)))
+            self.screen.blit(ans_label, (160 + setSide, 400))
+            setSide += 100
 
     def check_answer(self): ...
 
