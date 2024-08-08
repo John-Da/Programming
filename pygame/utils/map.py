@@ -1,5 +1,6 @@
-
 import pygame
-def btnFunction(clicked):
+
+
+def btnFunction(self):
     # if clicked == pygame.MOUSEBUTTONDOWN:
     print("Click")

@@ -20,24 +20,25 @@ class Game:
 
         self.btnFunction = btnFunction
 
-
     def run(self):
         while True:
             self.screen.fill((14, 219, 248))
             button = Button(self.screen, "Click", 140, 40, 350, 200, self.btnFunction)
+
+            mousepress = pygame.mouse.get_pressed()
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
 
-                
-            
-            button.drawBtn(event)
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    button.is_clicked(event.pos, mousepress)
+
+            button.drawBtn()
 
             pygame.display.update()
             self.clock.tick(60)
-
 
 
 if __name__ == "__main__":
