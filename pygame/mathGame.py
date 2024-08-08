@@ -3,12 +3,10 @@ import pygame
 
 
 from utils.buttons import Button
-# from utils.map import btnFunction
-# from utils.filePath import load_img
 
 
 class Game:
-    def __init__(self, btnFunction=None):
+    def __init__(self):
         pygame.init()
 
         pygame.display.set_caption("Basic Math")
@@ -17,8 +15,6 @@ class Game:
 
         self.screenWidth = self.screen.get_width()
         self.screenHeight = self.screen.get_height()
-
-        self.btnFunction = btnFunction
 
     def run(self):
         while True:
@@ -39,7 +35,7 @@ class Game:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     for button in buttons:
                         button.is_clicked(event.pos, mousepress)
-            
+
             for button in buttons:
                 button.drawBtn()
 
