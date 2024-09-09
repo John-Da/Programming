@@ -13,14 +13,14 @@ WHITE = (255,255,255)
 GREEN = (0,255,0)
 RED = (255,0,0)
 
-gameFont1 = '../Programming/Math-games-master/XpressiveBlack Regular.ttf'
-gameFont2 = '../Programming/Math-games-master/kenvector_future.ttf'
+gameFont1 = 'collections/schoolProject/Math-games-master/XpressiveBlack Regular.ttf'
+gameFont2 = 'collections/schoolProject/Math-games-master/kenvector_future.ttf'
 
-gameSound1 = '../Programming/Math-games-master/item1.ogg'
-gameSound2 = '../Programming/Math-games-master/item2.ogg'
+gameSound1 = 'collections/schoolProject/Math-games-master/item1.ogg'
+gameSound2 = 'collections/schoolProject/Math-games-master/item2.ogg'
 
-symImage = '../Programming/Math-games-master/symbols.png'
-bgImage = '../Programming/Math-games-master/background.jpg'
+symImage = 'collections/schoolProject/Math-games-master/symbols.png'
+bgImage = 'collections/schoolProject/Math-games-master/background.jpg'
 
 
 class Game(object):
