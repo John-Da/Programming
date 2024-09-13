@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link rel="stylesheet" href="udash.css">
+    <title>Dash Board</title>
+</head>
+<body>
+    <div class="sidebarnav" id="sidebar">
+        <div class="closebtn">
+            <a href="#" class="closer"><i class="fa-solid fa-xmark"></i></a>
+            <a href="#" class="courtName">Petanque Club <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="navbar">
+            <a href="#dashboard" class="topbd"><i class="fa-solid fa-table-cells-large"></i></i> Dash Board</a>
+            <a href="#bookings"><i class="fa-solid fa-list"></i> Bookings</a>
+            <a href="#users"><i class="fa-solid fa-baseball"></i> Courts</a>
+            <a href="#settings"><i class="fa-solid fa-gear"></i> Setting</a>
+        </div>
+        <button class="logout">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
+    </div>
+
+    <div class="dashBoardOverview" id="dashBoard">
+        <div class="dashboardHead">
+            <div class="dashHeadLeft">
+                <a href="#" id="openButton" class="open-button"><i class="fa-solid fa-bars"></i></a>
+            </div>
+            <div class="dashHeadRight">
+                <div class="search-container">
+                    <a href="#" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></a><input type="search" name="search" id="search" class="search-input" placeholder="Search">
+                </div>
+                <div class="user-container">
+                    <a href="#" id="noti"><i class="fa-solid fa-bell"></i></a>
+                    <a href="#" id="userProfile"><i class="fa-solid fa-circle-user"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="dashboardTag">
+            <h3>Dash Board Overview</h3>
+        </div>
+        <div class="dash-contents">
+            <div class="dash-left">
+                <div id="expenseCard">
+                    <div class="expenseTag">
+                        <h3>Total Expenses</h3>
+                        <div class="expenseChart-container">
+                            <canvas id="expenseChart"></canvas>
+                        </div>
+        
+                        <div class="expenseDetails styling">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="expenseCard">
+                    <div class="expenseTag">
+                        <h3>Chart 1</h3>
+                        <div class="expenseChart-container">
+                            <canvas id="chartOne"></canvas>
+                        </div>
+        
+                        <div class="chartOneDetails styling">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="expenseCard">
+                    <div class="expenseTag">
+                        <h3>Chart 2</h3>
+                        <div class="expenseChart-container">
+                            <canvas id="chartTwo"></canvas>
+                        </div>
+        
+                        <div class="chartTwoDetails styling">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dash-right">
+                <h2>Analysis</h2>
+                <div id="calender">
+                    <div class="calendarBoard">
+                        <div id="calendarContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&#169; | 2024 Petanque Club | All Rights Reserved</p>
+    </footer>
+
+
+
+    <script src="udash.js"></script>
+</body>
+</html>

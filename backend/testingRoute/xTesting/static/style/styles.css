@@ -1,0 +1,252 @@
+/* WEB Container */
+
+*{
+    list-style: none;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.navbar{
+    padding: 6px 2rem;
+    height: 4.5rem;
+    position: fixed;
+    width: 100%;
+    left: 0; top: 0;
+    z-index: 2;
+    background-color: #f06272;
+}
+
+.navbar-nav{
+    gap: 3rem;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+.navbar-nav li a{
+    font-weight: 600;
+}
+
+.content-box{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-box .hero-content{
+    text-align: center;
+    width: 40rem;
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+.content-box .hero-content h1{
+    margin-bottom: 3rem;
+}
+
+
+.services-content{
+    padding-top: 4.5rem;
+}
+
+
+/* LG / RG Container */
+.registerPage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.registerForm{
+    background-color: blanchedalmond;
+    box-sizing: border-box;
+    height: 100vh;
+    width: max(40%, 600px);
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.registerForm form{
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.registerForm form > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.registerForm form label{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(151, 100, 241);
+    color: #fff;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.registerForm form input{
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    border: 1px solid blanchedalmond;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    transition: all .3s ease;
+}
+
+.registerForm form input:hover{
+    border-color: black;
+}
+
+.registerForm form input:focus{
+    border-color: black;
+}
+
+div:has(input:focus) > label{
+    background-color: rgb(124, 97, 148);
+}
+
+.registerForm h2{
+    font-weight:700;
+    font-size: 3rem;
+}
+
+.registerForm form p{
+    text-align: center;
+}
+
+.registerForm form .subBtn{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 50rem;
+    margin-top: 10px;
+    border: none;
+    padding: 6px;
+    background-color: rgb(170, 106, 248);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 150ms ease;
+}
+
+.registerForm form button:hover{
+    background-color: rgb(107, 70, 142);
+}
+
+.registerForm form button:focus{
+    border-color: black;
+}
+
+.registerForm p a{
+    color: rgb(170, 106, 248);
+}
+
+.registerForm p a:hover{
+    text-decoration: underline;
+}
+
+.registerForm form .inputInfo{
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 4px 10px;
+}
+
+
+.registerPage .readme{
+    height: 100vh;
+    padding: 10px;
+    align-content: center;
+    width: max(40%, 800px);
+}
+
+.readme .logo{
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.readme p{
+    width: 85%;
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: 0.7px;
+}
+
+@media screen and (max-width: 1200px){
+    .registerForm{
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+}
+
+form div.incorrect label{
+    background-color: #f06272;
+}
+
+form div.incorrect input{
+    border-color: #f06272;
+}
+
+/* Login / Logout */
+
+
+
+
+/* Registor */
+
+
+
+
+
+/* Main Page */
+#logo{
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+#logo span{
+    color: crimson;
+}
+
+
+
+
+
+/* Feature */
+
+
+
+
+
+/* User Dash Board */

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+Sport Court
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+        <a href="#home" class="navbar-brand" id="logo">Sport<span>Court</span></a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#home" class="nav-link active text-primary">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#services" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+            </li>
+        </ul>
+        <a class="text-decoration-none bg-primary py-1 px-3 text-white rounded fs-5 fw-bold" href="/register">Sign Up</a>
+    </div>
+</nav>
+
+<div class="hero content-box" id="home">
+    <div class="hero-content">
+        <h1>Welcome to Sport Court</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, at excepturi accusamus atque. Cumque pariatur quae repellat veniam temporibus suscipit quasi!</p>
+        <button>Learn More</button>
+    </div>
+</div>
+
+<div class="services content-box" id="services">
+    <div class="services-content">
+        <h1>Welcome to Sport Court</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, at excepturi accusamus atque. Cumque pariatur quae repellat veniam temporibus suscipit quasi!</p>
+        <button>Learn More</button>
+    </div>
+</div>
+
+
+<!-- <image src='{{url_for('static', filename='images/img.jpg')}}' -->
+{% endblock %}

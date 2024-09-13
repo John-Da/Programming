@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="aiStyle.css">
+    <title>Admin</title>
+</head>
+<body>
+    <div class="admin-dashboard">
+        <header>
+          <nav>
+            <ul>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">Courts</a></li>
+              <li><a href="#">Bookings</a></li>
+              <li><a href="#">Users</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </nav>
+        </header>
+      
+        <main>
+          <section class="dashboard-overview">
+            <h2>Dashboard Overview</h2>
+            <div class="stats-container">
+              <div class="stat-card">
+                <h3>Total Bookings</h3>
+                <p>500</p>
+              </div>
+              <div class="stat-card">
+                <h3>Upcoming Bookings</h3>
+                <p>50</p>
+              </div>
+              <div class="stat-card">
+                <h3>Revenue</h3>
+                <p>$5,000</p>
+              </div>
+            </div>
+          </section>
+      
+          <section class="booking-list">
+            <h2>Recent Bookings</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Court</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>User</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Court 1</td>
+                  <td>2023-05-01</td>
+                  <td>9:00 AM - 10:00 AM</td>
+                  <td>John Doe</td>
+                  <td>Confirmed</td>
+                </tr>
+                <tr>
+                  <td>Court 2</td>
+                  <td>2023-05-02</td>
+                  <td>11:00 AM - 12:00 PM</td>
+                  <td>Jane Smith</td>
+                  <td>Pending</td>
+                </tr>
+                <!-- Add more booking rows -->
+              </tbody>
+            </table>
+          </section>
+        </main>
+      
+        <footer>
+          <p>&copy; 2023 Court Booking App. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

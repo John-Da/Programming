@@ -1,0 +1,152 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+
+.sideBar{
+    background-color: #000;
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0; left: -250px;
+    overflow: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+}
+
+.sideBar a{
+    color: #fff;
+}
+
+.sideBar a:hover{
+    color: #818188;
+}
+
+.sideBar .side-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    margin-bottom: 2rem;
+}
+
+.mainHead{
+    display: flex;
+}
+
+#menubar{
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+.mainHead .he2{
+    text-align: end;
+    flex-grow: 1;
+}
+
+.side-head a{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.side-head .logo{
+    font-size: 2rem;
+}
+
+.sideBar .navbar{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 14rem;
+}
+
+.sideBar .navbar ul li{
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #fff;
+}
+
+.sideBar .navbar ul li a{
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.sideBar .logout{
+    margin-top: 1.4rem;
+    width: 100%;
+    height: 3rem;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 3ms;
+}
+
+.sideBar .logout:hover{
+    background-color: #666;
+    color: #fff;
+}
+
+.sideBar .closebtn{
+    position: absolute;
+    top: 25px; right: 25px;
+}
+
+#main{
+    padding: 20px;
+    transition: margin-left .5s;
+}
+
+#main span{
+    font-size:30px;
+    cursor:pointer;
+}
+
+#main .tags{
+    padding-left: 22px;
+}
+
+#main .tags h3{
+    margin: 1.3rem 0;
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    height: 3rem;
+    align-content: center;
+}
+
+#dashboard-contents{
+    display: flex;
+
+    gap: 1rem;
+    width: 100%;
+    height: 80vh;
+    background-color: aqua;
+}
+
+#dashboard-contents .leftDash{
+    background-color: #818188;
+    flex-grow: 1;
+    height: 100%;
+    width: 60rem;
+}
+
+#dashboard-contents .rightDash{
+    background-color: #818188;
+    flex-grow: 1;
+    height: 100%;
+    width: 30rem;
+}
+
+
