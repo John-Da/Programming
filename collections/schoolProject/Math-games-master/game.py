@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import pygame, random
+import os
 from menu import Menu
 
 SCREEN_WIDTH = 640
@@ -13,14 +14,16 @@ WHITE = (255,255,255)
 GREEN = (0,255,0)
 RED = (255,0,0)
 
-gameFont1 = 'collections/schoolProject/Math-games-master/XpressiveBlack Regular.ttf'
-gameFont2 = 'collections/schoolProject/Math-games-master/kenvector_future.ttf'
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
-gameSound1 = 'collections/schoolProject/Math-games-master/item1.ogg'
-gameSound2 = 'collections/schoolProject/Math-games-master/item2.ogg'
+gameFont1 = 'XpressiveBlack Regular.ttf'
+gameFont2 = 'kenvector_future.ttf'
 
-symImage = 'collections/schoolProject/Math-games-master/symbols.png'
-bgImage = 'collections/schoolProject/Math-games-master/background.jpg'
+gameSound1 = 'item1.ogg'
+gameSound2 = 'item2.ogg'
+
+symImage = 'symbols.png'
+bgImage = 'background.jpg'
 
 
 class Game(object):
